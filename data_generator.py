@@ -10,18 +10,8 @@ class DataGenerator():
         self.x_train = self.x_train.reshape(-1, 28, 28, 1)/255.0
         self.x_test = self.x_test.reshape(-1, 28, 28, 1)/255.0
 
-    def next_batch(self, type='train'):
+    def next_batch(self):
         while True:
-            if type == 'train':
-                idx = np.random.choice(self.x_train.shape[0], self.config.batch_size)
-
-                batch_x = self.x_train[idx]
-                # batch_y = self.y_train[idx]
-            elif type == 'test':
-                idx = np.random.choice(self.x_test.shape[0], self.config.batch_size)
-
-                batch_x = self.x_test[idx]
-                # batch_y = self.y_test[idx]
-            else:
-                raise ('unkwon type. type should be train or test')
+            idx = np.random.choice(self.x_train.shape[0], self.config.batch_size)
+            batch_x = self.x_train[idx]
             yield batch_x
