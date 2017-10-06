@@ -1,0 +1,20 @@
+class GanConfig:
+    batch_size = 14
+    input_size = [28, 28, 1]
+    learning_rate = .0002
+    beta1 = .5
+    z_dim = 100
+    data_path = './data'
+    max_to_keep = 3
+    summary_dir = './summaries'
+    load = False
+    is_train = False
+    checkpoint_dir = './checkpoints/checkpoints'
+    n_epochs=500
+    nit_epoch = 50
+    save_every=1
+    num_batches=5000
+    model_dir='./res'
+    result_dir='./res'
+    model_name='tst'
+    sample_num=64
