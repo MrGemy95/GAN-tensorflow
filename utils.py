@@ -1,19 +1,14 @@
 import tensorflow as tf
-import numpy as np
 import os
-import matplotlib.pyplot as plt
-import scipy.misc
-
-
+import gzip
+import numpy as np
 def leaky_relu(x, alpha=.2):
   return tf.nn.relu(x) - alpha * tf.nn.relu(-x)
 
 
 
 def load_mnist(path, kind='train'):
-    import os
-    import gzip
-    import numpy as np
+
 
     """Load MNIST data from `path`"""
     labels_path = os.path.join(path,
