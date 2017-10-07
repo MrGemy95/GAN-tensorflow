@@ -1,14 +1,15 @@
 
 import tensorflow as tf
 from utils import leaky_relu
-class GanModel():
-    def __init__(self, config):
-        self.config = config
+from base_model import BaseModel
+class GanModel(BaseModel):
+    def __init__(self,config):
+        super(GanModel, self).__init__(config)
         self.is_training = tf.placeholder(tf.bool, name='is_training')
         self.z = tf.placeholder(tf.float32, [None, self.config.z_dim], name='z')
         self.inputs = tf.placeholder(tf.float32, [None] + self.config.input_size, name='real_images')
         self.build_model()
-
+        self.init_saver()
 
 
     def discriminator_templete(self, input):

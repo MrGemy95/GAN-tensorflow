@@ -9,7 +9,7 @@ class GanConfig:
     summary_dir = './summaries'
     load = False
     is_train = False
-    checkpoint_dir = './checkpoints/checkpoints'
+    checkpoint_dir = './checkpoints/'
     n_epochs=500
     nit_epoch = 50
     save_every=1
